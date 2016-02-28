@@ -1,0 +1,314 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "APIs to interact with ReCAP middleware are RESTful and need an API_KEY for any call to be invoked. Further NCIP protocols are also supported.",
+        "version": "1.0.0",
+        "title": "ReCAP APIs",
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "host": "middleware.recap.com",
+    "basePath": "/rest",
+    "tags": [
+        {
+            "name": "shared-collection",
+            "description": "Everything about your shared collection in the middleware."
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
+    "paths": {
+        "/sharedcollection/generateDump": {
+            "get": {
+                "tags": [
+                    "shared-collection"
+                ],
+                "summary": "This service generates either a full or incremental export of the shared collection information.",
+                "description": "Generate shared collection information and transmit to requesting institution's FTP location. This would typically be updates to shared collection information of partner sites that the requesting institution is interested in.",
+                "operationId": "generateDump",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "insitutionIds",
+                        "in": "query",
+                        "description": "Ids of institutions whose shared collection updates are requested. Use PR for Princeton, CL for Columbia and NY for NYPL.",
+                        "required": false,
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "CL",
+                                "PR",
+                                "NY"
+                            ],
+                            "default": "PR"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "name": "fetchType",
+                        "in": "query",
+                        "description": "Type of export - Full (use 0) or Incremental (use 1)",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/sharedcollection/retrieve": {
+            "get": {
+                "tags": [
+                    "shared-collection"
+                ],
+                "summary": "Retrieves Bib/Holdings/Item information",
+                "description": "This service fetches results based on search parameters. You can specify the type of record types that needs to be included in the response. The response is a marcxml record with Bibliographic, Holdings and Item information.",
+                "operationId": "retrieve",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "searchDocType",
+                        "in": "query",
+                        "description": "Document type for which search field values are provided for (Ex. Bibliographic, Holdings, Items)",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "fieldName",
+                        "in": "query",
+                        "description": "Search field",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "fieldValue",
+                        "in": "query",
+                        "description": "Search field value",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "responseDocTypes",
+                        "in": "query",
+                        "description": "Specify type of documents in the response. Use (0 for Bib only, 1 for Items and 2 for Bib/Holdings/Items).",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "insitutionIds",
+                        "in": "query",
+                        "description": "Filter out results by ids. Use PR for Princeton, CL for Columbia and NY for NYPL.",
+                        "required": true,
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "CL",
+                                "PR",
+                                "NY"
+                            ],
+                            "default": "PR"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/sharedCollection/update": {
+            "post": {
+                "tags": [
+                    "shared-collection"
+                ],
+                "operationId": "update",
+                "summary": "Update shared collection",
+                "description": "The service allows updates to bibliographic, hodlings and item information in the middleware.",
+                "consumes": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "content",
+                        "in": "body",
+                        "description": "Content to be updated.",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Content"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/sharedCollection/accession": {
+            "post": {
+                "tags": [
+                    "shared-collection"
+                ],
+                "operationId": "accession",
+                "summary": "Add new item record to the middleware.",
+                "description": "This service can be invoked by the IMS (Inventory Management System) client in order to notify the middleware of newly added items.",
+                "consumes": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item",
+                        "in": "body",
+                        "description": "Item being accessioned.",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Accession"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/sharedCollection/deaccession": {
+            "post": {
+                "tags": [
+                    "shared-collection"
+                ],
+                "operationId": "deaccession",
+                "summary": "Remove item record from the middleware.",
+                "description": "This service can be invoked by the IMS (Inventory Management System) client in order to notify the middleware of removed items.",
+                "consumes": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "item",
+                        "in": "body",
+                        "description": "Item being accessioned.",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Accession"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "api_key": {
+            "type": "apiKey",
+            "name": "api_key",
+            "in": "header"
+        }
+    },
+    "definitions": {
+        "Content": {
+            "type": "object",
+            "required": [
+                "docType",
+                "docId",
+                "content"
+            ],
+            "properties": {
+                "docType": {
+                    "type": "string"
+                },
+                "docId": {
+                    "type": "integer"
+                },
+                "content": {
+                    "type": "string",
+                    "xml": {
+                        "name": "records",
+                        "wrapped": true
+                    },
+                    "items": {
+                        "$ref": "#/definitions/marcxml"
+                    }
+                }
+            }
+        },
+        "marcxml": {
+            "type": "object",
+            "properties": {
+                "marc": {
+                    "type": "string"
+                }
+            }
+        },
+        "Accession": {
+            "type": "object",
+            "required": [
+                "itemBarcode",
+                "customerCode"
+            ],
+            "properties": {
+                "itemBarcode": {
+                    "type": "string"
+                },
+                "customerCode": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
