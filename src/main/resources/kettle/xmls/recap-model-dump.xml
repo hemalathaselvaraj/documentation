@@ -1,0 +1,150 @@
+<bibRecords>
+    <bibRecord>
+        <bib>
+            <bibId>1</bibId>
+            <owningInstitutionId>1</owningInstitutionId>
+            <createdDate>1997-06-12 00:00:00.0</createdDate>
+            <lastUpdatedDate>2014-07-30 13:26:10.0</lastUpdatedDate>
+            <content>
+                <collection xmlns="http://www.loc.gov/MARC21/slim">
+                    <record>
+                        <leader>01233cas a2200373I  4500</leader>
+                        <controlfield tag="001">1</controlfield>
+                        <controlfield tag="005">20130405104912.0</controlfield>
+                        <controlfield tag="008">860123c19069999ii wr p      f0   a0eng d</controlfield>
+                        <datafield tag="245" ind1="0" ind2="0">
+                            <subfield code="a">Indian trade journal.</subfield>
+                        </datafield>
+                    </record>
+                </collection>
+            </content>
+        </bib>
+        <holdings>
+            <holding>
+                <holdingId>1</holdingId>
+                <bibId>1</bibId>
+                <createdDate>1997-06-12 00:00:00.0</createdDate>
+                <lastUpdatedDate>2014-07-30 13:26:10.0</lastUpdatedDate>
+                <content>
+                    <holdingContent>
+                        <callNumber>NY 81</callNumber>
+                        <callNumberType>LCC</callNumberType>
+                    </holdingContent>
+                </content>
+                <items>
+                    <item>
+                        <itemId>1</itemId>
+                        <holdingId>1</holdingId>
+                        <createdDate>1997-06-12 00:00:00.0</createdDate>
+                        <lastUpdatedDate>2014-07-30 13:26:10.0</lastUpdatedDate>
+                        <barcode>111</barcode>
+                        <customerCode>1</customerCode>
+                        <callNumber>NY 81 V.1</callNumber>
+                        <callNumberType>LCC</callNumberType>
+                        <itemAvailableStatusId>1</itemAvailableStatusId>
+                        <itemTrackingStatusId>1</itemTrackingStatusId>
+                        <copyNumber>1</copyNumber>
+                        <owningInstitutionId>1</owningInstitutionId>
+                        <collectionTypeId>1</collectionTypeId>
+                    </item>
+                </items>
+            </holding>
+        </holdings>
+    </bibRecord>
+    <bibRecord>
+        <bib>
+            <bibId>2</bibId>
+            <owningInstitutionId>2</owningInstitutionId>
+            <createdDate>1997-06-12 00:00:00.0</createdDate>
+            <lastUpdatedDate>2014-07-30 13:26:10.0</lastUpdatedDate>
+            <content>
+                <collection xmlns="http://www.loc.gov/MARC21/slim">
+                    <record>
+                        <leader>01233cas a2200373I  4500</leader>
+                        <controlfield tag="001">1</controlfield>
+                        <controlfield tag="005">20130405104912.0</controlfield>
+                        <controlfield tag="008">860123c19069999ii wr p      f0   a0eng d</controlfield>
+                        <datafield tag="245" ind1="0" ind2="0">
+                            <subfield code="a">Foreign trade journal.</subfield>
+                        </datafield>
+                    </record>
+                </collection>
+            </content>
+        </bib>
+        <holdings>
+            <holding>
+                <holdingId>2</holdingId>
+                <bibId>2</bibId>
+                <createdDate>1997-06-12 00:00:00.0</createdDate>
+                <lastUpdatedDate>2014-07-30 13:26:10.0</lastUpdatedDate>
+                <content>
+                    <holdingContent>
+                        <callNumber>PR 56</callNumber>
+                        <callNumberType>LCC</callNumberType>
+                    </holdingContent>
+                </content>
+                <items>
+                    <item>
+                        <itemId>2</itemId>
+                        <holdingId>2</holdingId>
+                        <createdDate>1997-06-12 00:00:00.0</createdDate>
+                        <lastUpdatedDate>2014-07-30 13:26:10.0</lastUpdatedDate>
+                        <barcode>112</barcode>
+                        <customerCode>2</customerCode>
+                        <callNumber>PR 56 V.5</callNumber>
+                        <callNumberType>LCC</callNumberType>
+                        <itemAvailableStatusId>2</itemAvailableStatusId>
+                        <itemTrackingStatusId>2</itemTrackingStatusId>
+                        <copyNumber>2</copyNumber>
+                        <owningInstitutionId>2</owningInstitutionId>
+                        <collectionTypeId>2</collectionTypeId>
+                    </item>
+                    <item>
+                        <itemId>3</itemId>
+                        <holdingId>2</holdingId>
+                        <createdDate>1997-06-12 00:00:00.0</createdDate>
+                        <lastUpdatedDate>2014-07-30 13:26:10.0</lastUpdatedDate>
+                        <barcode>113</barcode>
+                        <customerCode>3</customerCode>
+                        <callNumber>PR 78 V.4</callNumber>
+                        <callNumberType>LCC</callNumberType>
+                        <itemAvailableStatusId>3</itemAvailableStatusId>
+                        <itemTrackingStatusId>3</itemTrackingStatusId>
+                        <copyNumber>3</copyNumber>
+                        <owningInstitutionId>2</owningInstitutionId>
+                        <collectionTypeId>2</collectionTypeId>
+                    </item>
+                </items>
+            </holding>
+            <holding>
+                <holdingId>3</holdingId>
+                <bibId>2</bibId>
+                <createdDate>1997-06-12 00:00:00.0</createdDate>
+                <lastUpdatedDate>2014-07-30 13:26:10.0</lastUpdatedDate>
+                <content>
+                    <holdingContent>
+                        <callNumber>PR 67</callNumber>
+                        <callNumberType>LCC</callNumberType>
+                    </holdingContent>
+                </content>
+                <items>
+                    <item>
+                        <itemId>4</itemId>
+                        <holdingId>3</holdingId>
+                        <createdDate>1997-06-12 00:00:00.0</createdDate>
+                        <lastUpdatedDate>2014-07-30 13:26:10.0</lastUpdatedDate>
+                        <barcode>114</barcode>
+                        <customerCode>4</customerCode>
+                        <callNumber>PR 67 V.7</callNumber>
+                        <callNumberType>LCC</callNumberType>
+                        <itemAvailableStatusId>1</itemAvailableStatusId>
+                        <itemTrackingStatusId>1</itemTrackingStatusId>
+                        <copyNumber>4</copyNumber>
+                        <owningInstitutionId>2</owningInstitutionId>
+                        <collectionTypeId>2</collectionTypeId>
+                    </item>
+                </items>
+            </holding>
+        </holdings>
+    </bibRecord>
+</bibRecords>
