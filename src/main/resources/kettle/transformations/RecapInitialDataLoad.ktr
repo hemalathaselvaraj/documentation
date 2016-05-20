@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>RecapInitialDataLoad</name>
+    <name>RecapFinalDataLoad1</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -67,222 +67,35 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2016&#x2f;05&#x2f;12 19&#x3a;51&#x3a;02.687</created_date>
+  <created_date>2016&#x2f;05&#x2f;18 12&#x3a;40&#x3a;44.742</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2016&#x2f;05&#x2f;12 20&#x3a;27&#x3a;40.128</modified_date>
-    <key_for_session_key/>
+  <modified_date>2016&#x2f;05&#x2f;20 17&#x3a;10&#x3a;25.514</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
+    <notepad>
+      <note>Note to use this transformation&#xa;&#xa;1. Select xml file from step - &#x27;Input Schema Xml&#x27;&#xa;2. Create a new database connection in step - &#x27;Bib Table&#x27; &#xa;3. Select the created connection in step - &#x27;Holdings Table&#x27;&#xa;4. Select the created connection in step - &#x27;Item Table&#x27;&#xa;5. Select the created connection in step - &#x27;Collection Group Tanle Lookup&#x27;&#xa;5. Change the path of failure files in steps - &#x27;Bib Failed Excel Output&#x27;, &#x27;Holdings Failed Excel Output&#x27; and &#x27;Item Failed Excel Output&#x27;.&#xa;6. If required, change the start id in step - &#x27;Bib Id Seq&#x27;, &#x27;Holdings Id Seq&#x27; and &#x27;Item Id Seq&#x27;.</note>
+      <xloc>22</xloc>
+      <yloc>41</yloc>
+      <width>868</width>
+      <heigth>163</heigth>
+      <fontname>Ubuntu</fontname>
+      <fontsize>11</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
-  <connection>
-    <name>JeffersonConn</name>
-    <server>jefferson.library.upenn.edu</server>
-    <type>MYSQL</type>
-    <access>Native</access>
-    <database>OLE</database>
-    <port>3306</port>
-    <username>OLE</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce10bebd83ff</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>Mysql_OLE_B</name>
-    <server>localhost</server>
-    <type>MYSQL</type>
-    <access>Native</access>
-    <database>ole_b</database>
-    <port>3306</port>
-    <username>root</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce10cc9da0ce</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>MySQLCon</name>
-    <server>localhost</server>
-    <type>MYSQL</type>
-    <access>Native</access>
-    <database>test_ole</database>
-    <port>3306</port>
-    <username>root</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce10cc9da0ce</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>MySQLOLE</name>
-    <server>localhost</server>
-    <type>MYSQL</type>
-    <access>Native</access>
-    <database>OLE</database>
-    <port>3306</port>
-    <username>OLE</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce10bebd83ff</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>MysqlOLEUPENN</name>
-    <server>localhost</server>
-    <type>MYSQL</type>
-    <access>Native</access>
-    <database>OLE_UPENN</database>
-    <port>3306</port>
-    <username>OLE_UPENN</username>
-    <password>Encrypted 2be98afc86aa7f2ab873c9145eeb781f4</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>OLE_BConn</name>
-    <server>localhost</server>
-    <type>MYSQL</type>
-    <access>Native</access>
-    <database>ole_b</database>
-    <port>3306</port>
-    <username>root</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce10cc9da0ce</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>OracleCon</name>
-    <server>localhost</server>
-    <type>ORACLE</type>
-    <access>Native</access>
-    <database>xe</database>
-    <port>1521</port>
-    <username>sys as sysdba</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce10cc9da0ce</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>OracleOLE</name>
-    <server>localhost</server>
-    <type>ORACLE</type>
-    <access>Native</access>
-    <database>xe</database>
-    <port>1521</port>
-    <username>sys as sysdba</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce10cc9da0ce</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace>VoyagerLocal</index_tablespace>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
   <connection>
     <name>Recap-mydb</name>
     <server>localhost</server>
@@ -311,7 +124,7 @@
     </attributes>
   </connection>
   <connection>
-    <name>RecapTestDB</name>
+    <name>Recap-test_recap</name>
     <server>localhost</server>
     <type>MYSQL</type>
     <access>Native</access>
@@ -337,52 +150,27 @@
       <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
-  <connection>
-    <name>VoyagerConn</name>
-    <server>voyagerdev.library.upenn.edu</server>
-    <type>ORACLE</type>
-    <access>Native</access>
-    <database>VGER</database>
-    <port>1521</port>
-    <username>ro_penndb</username>
-    <password>Encrypted 2be98afc86aa7f296a426be75d09cabd8</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
   <order>
-  <hop> <from>Add constants</from><to>Current Date</to><enabled>Y</enabled> </hop>
-  <hop> <from>Current Date</from><to>If Dates are Null set Current Date Bib</to><enabled>Y</enabled> </hop>
-  <hop> <from>If Dates are Null set Current Date Bib</from><to>BIb Id Seq</to><enabled>Y</enabled> </hop>
-  <hop> <from>Input Schema Xml</from><to>Add constants</to><enabled>Y</enabled> </hop>
-  <hop> <from>Bib Table</from><to>BIB_Failed</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add constants</from><to>Collection Group Table Lookup</to><enabled>Y</enabled> </hop>
   <hop> <from>BIb Id Seq</from><to>Bib Table</to><enabled>Y</enabled> </hop>
-  <hop> <from>Add constants 2</from><to>Collection Group Table Lookup</to><enabled>Y</enabled> </hop>
-  <hop> <from>Collection Group Table Lookup</from><to>If Dates are Null set Current Date Item</to><enabled>Y</enabled> </hop>
+  <hop> <from>Bib Table</from><to>Modify HoldingsTree if null</to><enabled>Y</enabled> </hop>
+  <hop> <from>Collection Group Table Lookup</from><to>Modify dates and throw barcode exception</to><enabled>Y</enabled> </hop>
+  <hop> <from>Current Date</from><to>Modify dates, institutionId and institutionBibId</to><enabled>Y</enabled> </hop>
   <hop> <from>Holdings Id Seq</from><to>Holdings Table</to><enabled>Y</enabled> </hop>
-  <hop> <from>Holdings Schema Xml</from><to>If Dates are Null set Current Date Holdings</to><enabled>Y</enabled> </hop>
-  <hop> <from>Holdings Table</from><to>HOLDINGS_Failed</to><enabled>Y</enabled> </hop>
+  <hop> <from>Holdings Schema Xml</from><to>Modify dates and holdingsInstitutionId</to><enabled>Y</enabled> </hop>
   <hop> <from>Holdings Table</from><to>Modify Items if null</to><enabled>Y</enabled> </hop>
-  <hop> <from>If Dates are Null set Current Date Holdings</from><to>Holdings Id Seq</to><enabled>Y</enabled> </hop>
-  <hop> <from>If Dates are Null set Current Date Item</from><to>If field value is null</to><enabled>Y</enabled> </hop>
   <hop> <from>If field value is null</from><to>Item Id Seq</to><enabled>Y</enabled> </hop>
-  <hop> <from>Item Schema Xml</from><to>Add constants 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Input Schema Xml</from><to>Current Date</to><enabled>Y</enabled> </hop>
+  <hop> <from>Item Id Seq</from><to>Item Table</to><enabled>Y</enabled> </hop>
+  <hop> <from>Item Schema Xml</from><to>Add constants</to><enabled>Y</enabled> </hop>
   <hop> <from>Modify HoldingsTree if null</from><to>Holdings Schema Xml</to><enabled>Y</enabled> </hop>
   <hop> <from>Modify Items if null</from><to>Item Schema Xml</to><enabled>Y</enabled> </hop>
-  <hop> <from>Bib Table</from><to>Modify HoldingsTree if null</to><enabled>Y</enabled> </hop>
-  <hop> <from>Item Id Seq</from><to>Item Table</to><enabled>Y</enabled> </hop>
-  <hop> <from>Item Table</from><to>ITEM_Failed</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modify dates and holdingsInstitutionId</from><to>Holdings Id Seq</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modify dates and throw barcode exception</from><to>If field value is null</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modify dates, institutionId and institutionBibId</from><to>BIb Id Seq</to><enabled>Y</enabled> </hop>
+  <hop> <from>Bib Table</from><to>BIb Failed Excel Output</to><enabled>Y</enabled> </hop>
+  <hop> <from>Item Table</from><to>Item Failed Excel Output</to><enabled>Y</enabled> </hop>
+  <hop> <from>Holdings Table</from><to>Holding Failed Excel Output</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Add constants</name>
@@ -397,13 +185,13 @@
            </partitioning>
     <fields>
       <field>
-        <name>BIB_INSTITUTION_ID</name>
+        <name>ITEM_STATUS_ID</name>
         <type>Integer</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
-        <nullif>2</nullif>
+        <nullif>1</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -411,8 +199,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>215</xloc>
-      <yloc>95</yloc>
+      <xloc>191</xloc>
+      <yloc>573</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -430,390 +218,18 @@
            </partitioning>
       <valuename>BibIdSeq</valuename>
       <use_database>N</use_database>
-      <connection>MySQLOLE</connection>
-      <schema>ole</schema>
-      <seqname>ole_ds_bib_s</seqname>
+      <connection>Recap-mydb</connection>
+      <schema>mydb</schema>
+      <seqname>bibliographic_s</seqname>
       <use_counter>Y</use_counter>
       <counter_name>BibIdSeq</counter_name>
-      <start_at>1001</start_at>
+      <start_at>8066</start_at>
       <increment_by>1</increment_by>
       <max_value>999999999</max_value>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>750</xloc>
-      <yloc>95</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Current Date</name>
-    <type>SystemInfo</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <name>CURR_DATE</name>
-        <type>today start</type>
-        </field>
-      </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>341</xloc>
-      <yloc>94</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>If Dates are Null set Current Date Bib</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;var createDateBib &#x3d; CURR_DATE&#x3b;&#xa;var lastUpdatedDateBib &#x3d; CURR_DATE&#x3b;&#xa;var bibExceptionMessage&#x3b;&#xa;&#xa;if &#x28;owningInstitutionBibId &#x3d;&#x3d; null &#x7c;&#x7c; owningInstitutionBibId &#x3d;&#x3d; &#x27;&#x27; &#x7c;&#x7c; owningInstitutionBibId &#x3d;&#x3d; &#x27; &#x27;&#x29; &#x7b;&#xa;	bibExceptionMessage &#x3d; &#x22;Input bib element &#x27;owningInstitutionBibId&#x27; is Null&#x22;&#x3b;&#xa;&#x7d; else &#x7b;&#xa;	bibExceptionMessage &#x3d; &#x22;&#x22;&#x3b;&#xa;&#x7d;&#xa;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>createDateBib</name>
-        <rename>createDateBib</rename>
-        <type>Date</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>lastUpdatedDateBib</name>
-        <rename>lastUpdatedDateBib</rename>
-        <type>Date</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>bibExceptionMessage</name>
-        <rename>bibExceptionMessage</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>535</xloc>
-      <yloc>93</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Input Schema Xml</name>
-    <type>getXMLData</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <include>N</include>
-    <include_field/>
-    <rownum>N</rownum>
-    <addresultfile>N</addresultfile>
-    <namespaceaware>Y</namespaceaware>
-    <ignorecomments>N</ignorecomments>
-    <readurl>N</readurl>
-    <validating>N</validating>
-    <usetoken>N</usetoken>
-    <IsIgnoreEmptyFile>N</IsIgnoreEmptyFile>
-    <doNotFailIfNoFile>Y</doNotFailIfNoFile>
-    <rownum_field/>
-    <encoding>UTF-8</encoding>
-    <file>
-      <name>&#x2f;home&#x2f;likewise-open&#x2f;HTCINDIA&#x2f;rajeshbabuk&#x2f;ReCAP&#x2f;recap&#x2f;princeton.xml</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-    <fields>
-      <field>
-        <name>XmlBibId</name>
-        <xpath>bib&#x2f;bibId</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>BibContent</name>
-        <xpath>bib&#x2f;content&#x2f;collection</xpath>
-        <element_type>node</element_type>
-        <result_type>singlenode</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>owningInstitutionId</name>
-        <xpath>bib&#x2f;owningInstitutionId</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>owningInstitutionBibId</name>
-        <xpath>bib&#x2f;owningInstitutionBibId</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>HoldingsTree</name>
-        <xpath>holdings</xpath>
-        <element_type>node</element_type>
-        <result_type>singlenode</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>BibRecordXml</name>
-        <xpath>bib</xpath>
-        <element_type>node</element_type>
-        <result_type>singlenode</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-    </fields>
-    <limit>0</limit>
-    <loopxpath>&#x2f;bibRecords&#x2f;bibRecord</loopxpath>
-    <IsInFields>N</IsInFields>
-    <IsAFile>N</IsAFile>
-    <XmlField/>
-    <prunePath/>
-    <shortFileFieldName/>
-    <pathFieldName/>
-    <hiddenFieldName/>
-    <lastModificationTimeFieldName/>
-    <uriNameFieldName/>
-    <rootUriNameFieldName/>
-    <extensionFieldName/>
-    <sizeFieldName/>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>91</xloc>
-      <yloc>96</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>BIB_Failed</name>
-    <type>TextFileOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <separator>&#x7c;</separator>
-    <enclosure>&#x22;</enclosure>
-    <enclosure_forced>N</enclosure_forced>
-    <enclosure_fix_disabled>N</enclosure_fix_disabled>
-    <header>Y</header>
-    <footer>N</footer>
-    <format>DOS</format>
-    <compression>None</compression>
-    <encoding>UTF-8</encoding>
-    <endedLine/>
-    <fileNameInField>N</fileNameInField>
-    <fileNameField>MFHD_ID</fileNameField>
-    <create_parent_folder>Y</create_parent_folder>
-    <file>
-      <name>&#x2f;home&#x2f;likewise-open&#x2f;HTCINDIA&#x2f;rajeshbabuk&#x2f;Failed_Bibs</name>
-      <is_command>N</is_command>
-      <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
-      <extention>txt</extention>
-      <append>N</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>Y</SpecifyFormat>
-      <date_time_format>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</date_time_format>
-      <add_to_result_filenames>Y</add_to_result_filenames>
-      <pad>N</pad>
-      <fast_dump>N</fast_dump>
-      <splitevery>0</splitevery>
-    </file>
-    <fields>
-      <field>
-        <name>BibIdSeq</name>
-        <type>Integer</type>
-        <format>&#x23;&#x3b;-&#x23;</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>0</precision>
-      </field>
-      <field>
-        <name>owningInstitutionId</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>owningInstitutionBibId</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>BIB_INSTITUTION_ID</name>
-        <type>Integer</type>
-        <format>&#x23;&#x3b;-&#x23;</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>9</length>
-        <precision>0</precision>
-      </field>
-      <field>
-        <name>createDateBib</name>
-        <type>Date</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>lastUpdatedDateBib</name>
-        <type>Date</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>bibExceptionMessage</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>Err_desc</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>BibRecordXml</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1008</xloc>
-      <yloc>93</yloc>
+      <xloc>643</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -856,10 +272,6 @@
           <stream_name>BibContent</stream_name>
         </field>
         <field>
-          <column_name>OWNING_INST_ID</column_name>
-          <stream_name>BIB_INSTITUTION_ID</stream_name>
-        </field>
-        <field>
           <column_name>CREATED_DATE</column_name>
           <stream_name>createDateBib</stream_name>
         </field>
@@ -868,47 +280,18 @@
           <stream_name>lastUpdatedDateBib</stream_name>
         </field>
         <field>
+          <column_name>OWNING_INST_ID</column_name>
+          <stream_name>BIB_INSTITUTION_ID</stream_name>
+        </field>
+        <field>
           <column_name>OWNING_INST_BIB_ID</column_name>
-          <stream_name>BibIdSeq</stream_name>
+          <stream_name>OWNING_INSTITUTION_BIB_ID</stream_name>
         </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>864</xloc>
-      <yloc>96</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Add constants 2</name>
-    <type>Constant</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <name>ITEM_STATUS_ID</name>
-        <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>1</nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>197</xloc>
-      <yloc>424</yloc>
+      <xloc>850</xloc>
+      <yloc>238</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -924,7 +307,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>RecapTestDB</connection>
+    <connection>Recap-mydb</connection>
     <cache>Y</cache>
     <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
@@ -949,15 +332,15 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>378</xloc>
-      <yloc>421</yloc>
+      <xloc>360</xloc>
+      <yloc>569</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>HOLDINGS_Failed</name>
-    <type>TextFileOutput</type>
+    <name>Current Date</name>
+    <type>SystemInfo</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -966,127 +349,16 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <separator>&#x7c;</separator>
-    <enclosure>&#x22;</enclosure>
-    <enclosure_forced>N</enclosure_forced>
-    <enclosure_fix_disabled>N</enclosure_fix_disabled>
-    <header>Y</header>
-    <footer>N</footer>
-    <format>DOS</format>
-    <compression>None</compression>
-    <encoding>UTF-8</encoding>
-    <endedLine/>
-    <fileNameInField>N</fileNameInField>
-    <fileNameField>MFHD_ID</fileNameField>
-    <create_parent_folder>Y</create_parent_folder>
-    <file>
-      <name>&#x2f;home&#x2f;likewise-open&#x2f;HTCINDIA&#x2f;rajeshbabuk&#x2f;Failed_Holdings</name>
-      <is_command>N</is_command>
-      <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
-      <extention>txt</extention>
-      <append>N</append>
-      <split>Y</split>
-      <haspartno>Y</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>Y</SpecifyFormat>
-      <date_time_format>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</date_time_format>
-      <add_to_result_filenames>Y</add_to_result_filenames>
-      <pad>N</pad>
-      <fast_dump>N</fast_dump>
-      <splitevery>0</splitevery>
-    </file>
     <fields>
       <field>
-        <name>BibIdSeq</name>
-        <type>Integer</type>
-        <format>&#x23;&#x3b;-&#x23;</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>0</precision>
-      </field>
-      <field>
-        <name>HoldingsIdSeq</name>
-        <type>Integer</type>
-        <format>&#x23;&#x3b;-&#x23;</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>0</precision>
-      </field>
-      <field>
-        <name>owningInstitutionBibId</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>owningInstitutionHoldingsId</name>
-        <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>0</precision>
-      </field>
-      <field>
-        <name>holdingsExceptionMessage</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>Err_desc</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>HoldingXml</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-    </fields>
+        <name>CURR_DATE</name>
+        <type>system date &#x28;variable&#x29;</type>
+        </field>
+      </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>793</xloc>
-      <yloc>262</yloc>
+      <xloc>216</xloc>
+      <yloc>243</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1104,18 +376,18 @@
            </partitioning>
       <valuename>HoldingsIdSeq</valuename>
       <use_database>N</use_database>
-      <connection>MySQLOLE</connection>
+      <connection/>
       <schema>ole</schema>
       <seqname>ole_ds_bib_s</seqname>
       <use_counter>Y</use_counter>
       <counter_name>HoldingsIdSeq</counter_name>
-      <start_at>1001</start_at>
+      <start_at>6327</start_at>
       <increment_by>1</increment_by>
       <max_value>999999999</max_value>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>526</xloc>
-      <yloc>266</yloc>
+      <xloc>511</xloc>
+      <yloc>414</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1145,7 +417,7 @@
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>&#x2f;home&#x2f;likewise-open&#x2f;HTCINDIA&#x2f;rajeshbabuk&#x2f;ReCAP&#x2f;Data Loading&#x2f;HoldingsRecordXml.xml</name>
+      <name/>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -1153,11 +425,56 @@
     </file>
     <fields>
       <field>
-        <name>XmlHoldingId</name>
-        <xpath>holdingId</xpath>
+        <name>owningInstitutionHoldingsId</name>
+        <xpath>owningInstitutionHoldingsId</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>HoldingInstitutionIdFrom001</name>
+        <xpath>content&#x2f;collection&#x2f;record&#x2f;&#x2a;&#x5b;name&#x28;&#x29;&#x3d;&#x27;controlfield&#x27;&#x5d;&#x5b;&#x40;tag&#x3d;&#x27;001&#x27;&#x5d;</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>callNumber</name>
+        <xpath>content&#x2f;collection&#x2f;record&#x2f;&#x2a;&#x5b;name&#x28;&#x29;&#x3d;&#x27;datafield&#x27;&#x5d;&#x5b;&#x40;tag&#x3d;&#x27;852&#x27;&#x5d;&#x2f;&#x2a;&#x5b;name&#x28;&#x29;&#x3d;&#x27;subfield&#x27;&#x5d;&#x5b;&#x40;code&#x3d;&#x27;h&#x27;&#x5d;</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>callNumberType</name>
+        <xpath>content&#x2f;collection&#x2f;record&#x2f;&#x2a;&#x5b;name&#x28;&#x29;&#x3d;&#x27;datafield&#x27;&#x5d;&#x5b;&#x40;tag&#x3d;&#x27;852&#x27;&#x5d;&#x2f;&#x40;ind1</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>String</type>
         <format/>
         <currency/>
         <decimal/>
@@ -1183,23 +500,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>owningInstitutionHoldingsId</name>
-        <xpath>owningInstitutionHoldingsId</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>Items</name>
-        <xpath>items</xpath>
+        <name>HoldingXml</name>
+        <xpath>.</xpath>
         <element_type>node</element_type>
         <result_type>singlenode</result_type>
         <type>String</type>
@@ -1213,8 +515,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>HoldingXml</name>
-        <xpath>.</xpath>
+        <name>Items</name>
+        <xpath>items</xpath>
         <element_type>node</element_type>
         <result_type>singlenode</result_type>
         <type>String</type>
@@ -1244,8 +546,8 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>86</xloc>
-      <yloc>267</yloc>
+      <xloc>71</xloc>
+      <yloc>415</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1301,97 +603,13 @@
         </field>
         <field>
           <column_name>OWNING_INST_HOLDINGS_ID</column_name>
-          <stream_name>BibIdSeq</stream_name>
+          <stream_name>OWNING_INSTITUTION_HOLDING_ID</stream_name>
         </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>654</xloc>
-      <yloc>262</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>If Dates are Null set Current Date Holdings</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;var createDateHoldings &#x3d; CURR_DATE&#x3b;&#xa;var lastUpdatedDateHoldings &#x3d; CURR_DATE&#x3b;&#xa;var holdingsExceptionMessage&#x3b;&#xa;&#xa;if &#x28;owningInstitutionHoldingsId &#x3d;&#x3d; null &#x7c;&#x7c; owningInstitutionHoldingsId &#x3d;&#x3d; &#x27;&#x27; &#x7c;&#x7c; owningInstitutionHoldingsId &#x3d;&#x3d; &#x27; &#x27;&#x29; &#x7b;&#xa;	holdingsExceptionMessage &#x3d; &#x22;Input holdings element &#x27;owningInstitutionHoldingsId&#x27; is Null&#x22;&#x3b;&#xa;&#x7d; else &#x7b;&#xa;	holdingsExceptionMessage &#x3d; &#x22;&#x22;&#x3b;&#xa;&#x7d;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>createDateHoldings</name>
-        <rename>createDateHoldings</rename>
-        <type>Date</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>lastUpdatedDateHoldings</name>
-        <rename>lastUpdatedDateHoldings</rename>
-        <type>Date</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>holdingsExceptionMessage</name>
-        <rename>holdingsExceptionMessage</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>309</xloc>
-      <yloc>267</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>If Dates are Null set Current Date Item</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;var createDateItem &#x3d; CURR_DATE&#x3b;&#xa;var lastUpdatedDateItem &#x3d; CURR_DATE&#x3b;&#xa;var itemExceptionMessage&#x3b;&#xa;&#xa;if &#x28;ItemBarcode &#x3d;&#x3d; null &#x7c;&#x7c; ItemBarcode &#x3d;&#x3d; &#x27;&#x27; &#x7c;&#x7c; ItemBarcode &#x3d;&#x3d; &#x27; &#x27;&#x29; &#x7b;&#xa;	itemExceptionMessage &#x3d; &#x22;Input item data field element &#x27;876 &#x24;p&#x27; is Null&#x22;&#x3b;&#xa;&#x7d; else &#x7b;&#xa;	itemExceptionMessage &#x3d; &#x22;&#x22;&#x3b;&#xa;&#x7d;&#xa;&#xa;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>createDateItem</name>
-        <rename>createDateItem</rename>
-        <type>Date</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>lastUpdatedDateItem</name>
-        <rename>lastUpdatedDateItem</rename>
-        <type>Date</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>itemExceptionMessage</name>
-        <rename>itemExceptionMessage</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>648</xloc>
-      <yloc>422</yloc>
+      <xloc>639</xloc>
+      <yloc>410</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1416,28 +634,161 @@
       </valuetypes>
     <fields>
       <field>
-        <name>ItemBarcode</name>
-        <value>1</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-        </field>
-      <field>
-        <name>owningInstitutionId</name>
-        <value>1</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-        </field>
-      <field>
         <name>CustomerCode</name>
-        <value>1</value>
+        <value>None</value>
         <mask/>
         <set_empty_string>N</set_empty_string>
         </field>
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>856</xloc>
-      <yloc>422</yloc>
+      <xloc>841</xloc>
+      <yloc>570</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Input Schema Xml</name>
+    <type>getXMLData</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <include>N</include>
+    <include_field/>
+    <rownum>N</rownum>
+    <addresultfile>N</addresultfile>
+    <namespaceaware>Y</namespaceaware>
+    <ignorecomments>N</ignorecomments>
+    <readurl>N</readurl>
+    <validating>N</validating>
+    <usetoken>N</usetoken>
+    <IsIgnoreEmptyFile>Y</IsIgnoreEmptyFile>
+    <doNotFailIfNoFile>Y</doNotFailIfNoFile>
+    <rownum_field/>
+    <encoding>UTF-8</encoding>
+    <file>
+      <name>&#x2f;home&#x2f;likewise-open&#x2f;HTCINDIA&#x2f;rajeshbabuk&#x2f;ReCAP&#x2f;recap&#x2f;columbia_sample_20160427.xml</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>BibContent</name>
+        <xpath>bib&#x2f;content&#x2f;collection</xpath>
+        <element_type>node</element_type>
+        <result_type>singlenode</result_type>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>BibInstitutionIdFrom001</name>
+        <xpath>bib&#x2f;content&#x2f;collection&#x2f;record&#x2f;&#x2a;&#x5b;name&#x28;&#x29;&#x3d;&#x27;controlfield&#x27;&#x5d;&#x5b;&#x40;tag&#x3d;&#x27;001&#x27;&#x5d;</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>owningInstitutionId</name>
+        <xpath>bib&#x2f;owningInstitutionId</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>owningInstitutionBibId</name>
+        <xpath>bib&#x2f;owningInstitutionBibId</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>BibRecordXml</name>
+        <xpath>bib</xpath>
+        <element_type>node</element_type>
+        <result_type>singlenode</result_type>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>HoldingsTree</name>
+        <xpath>holdings</xpath>
+        <element_type>node</element_type>
+        <result_type>singlenode</result_type>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+    </fields>
+    <limit>0</limit>
+    <loopxpath>&#x2f;bibRecords&#x2f;bibRecord</loopxpath>
+    <IsInFields>N</IsInFields>
+    <IsAFile>N</IsAFile>
+    <XmlField>FileName</XmlField>
+    <prunePath/>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>74</xloc>
+      <yloc>242</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1455,18 +806,18 @@
            </partitioning>
       <valuename>ItemIdSeq</valuename>
       <use_database>N</use_database>
-      <connection>MySQLOLE</connection>
+      <connection/>
       <schema>ole</schema>
       <seqname>ole_ds_bib_s</seqname>
       <use_counter>Y</use_counter>
       <counter_name>ItemIdSeq</counter_name>
-      <start_at>1001</start_at>
+      <start_at>8710</start_at>
       <increment_by>1</increment_by>
       <max_value>999999999</max_value>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>967</xloc>
-      <yloc>422</yloc>
+      <xloc>952</xloc>
+      <yloc>570</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1496,7 +847,7 @@
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>&#x2f;home&#x2f;likewise-open&#x2f;HTCINDIA&#x2f;rajeshbabuk&#x2f;ReCAP&#x2f;Data Loading&#x2f;ItemsRecordXml.xml</name>
+      <name/>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -1655,76 +1006,8 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>72</xloc>
-      <yloc>427</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Modify HoldingsTree if null</name>
-    <type>IfNull</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <replaceAllByValue/>
-      <replaceAllMask/>
-      <selectFields>Y</selectFields>
-      <selectValuesType>N</selectValuesType>
-      <setEmptyStringAll>N</setEmptyStringAll>
-    <valuetypes>
-      </valuetypes>
-    <fields>
-      <field>
-        <name>HoldingsTree</name>
-        <value>&#x3c;holdings&#x3e;&#x3c;&#x2f;holdings&#x3e;</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-        </field>
-      </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>470</xloc>
-      <yloc>191</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Modify Items if null</name>
-    <type>IfNull</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <replaceAllByValue/>
-      <replaceAllMask/>
-      <selectFields>Y</selectFields>
-      <selectValuesType>N</selectValuesType>
-      <setEmptyStringAll>N</setEmptyStringAll>
-    <valuetypes>
-      </valuetypes>
-    <fields>
-      <field>
-        <name>Items</name>
-        <value>&#x3c;items&#x3e;&#x3c;&#x2f;items&#x3e;</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-        </field>
-      </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>359</xloc>
-      <yloc>344</yloc>
+      <xloc>57</xloc>
+      <yloc>575</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1746,7 +1029,7 @@
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
+    <use_batch>N</use_batch>
     <specify_fields>Y</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
     <partitioning_field/>
@@ -1814,18 +1097,26 @@
           <column_name>OWNING_INST_ID</column_name>
           <stream_name>BIB_INSTITUTION_ID</stream_name>
         </field>
+        <field>
+          <column_name>CALL_NUMBER</column_name>
+          <stream_name>callNumber</stream_name>
+        </field>
+        <field>
+          <column_name>CALL_NUMBER_TYPE</column_name>
+          <stream_name>callNumberType</stream_name>
+        </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1060</xloc>
-      <yloc>421</yloc>
+      <xloc>1045</xloc>
+      <yloc>569</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>ITEM_Failed</name>
-    <type>TextFileOutput</type>
+    <name>BIb Failed Excel Output</name>
+    <type>ExcelOutput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1834,235 +1125,577 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <separator>&#x7c;</separator>
-    <enclosure>&#x22;</enclosure>
-    <enclosure_forced>N</enclosure_forced>
-    <enclosure_fix_disabled>N</enclosure_fix_disabled>
     <header>Y</header>
     <footer>N</footer>
-    <format>DOS</format>
-    <compression>None</compression>
     <encoding>UTF-8</encoding>
-    <endedLine/>
-    <fileNameInField>N</fileNameInField>
-    <fileNameField>MFHD_ID</fileNameField>
-    <create_parent_folder>Y</create_parent_folder>
+    <append>N</append>
+    <add_to_result_filenames>N</add_to_result_filenames>
     <file>
-      <name>&#x2f;home&#x2f;likewise-open&#x2f;HTCINDIA&#x2f;rajeshbabuk&#x2f;Failed_ITEM</name>
-      <is_command>N</is_command>
-      <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
-      <extention>txt</extention>
-      <append>N</append>
+      <name>&#x2f;home&#x2f;likewise-open&#x2f;HTCINDIA&#x2f;rajeshbabuk&#x2f;EtlLoadReports&#x2f;FailedBibs</name>
+      <extention>xls</extention>
+      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
+      <create_parent_folder>Y</create_parent_folder>
       <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>Y</SpecifyFormat>
-      <date_time_format>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</date_time_format>
-      <add_to_result_filenames>Y</add_to_result_filenames>
-      <pad>N</pad>
-      <fast_dump>N</fast_dump>
+      <add_date>Y</add_date>
+      <add_time>Y</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format>yyyy&#x2f;MM&#x2f;dd HH&#x3a;mm&#x3a;ss.SSS</date_time_format>
+      <sheetname>Bibs Failed</sheetname>
+      <autosizecolums>Y</autosizecolums>
+      <nullisblank>N</nullisblank>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
       <splitevery>0</splitevery>
-    </file>
+      <usetempfiles>N</usetempfiles>
+      <tempdirectory/>
+      </file>
+    <template>
+      <enabled>N</enabled>
+      <append>N</append>
+      <filename>template.xls</filename>
+    </template>
     <fields>
       <field>
         <name>BibIdSeq</name>
         <type>Integer</type>
-        <format>&#x23;&#x3b;-&#x23;</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>0</precision>
+        <format/>
       </field>
       <field>
-        <name>owningInstitutionBibId</name>
+        <name>BIB_INSTITUTION_ID</name>
         <type>String</type>
         <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
       </field>
       <field>
-        <name>HoldingsIdSeq</name>
-        <type>Integer</type>
-        <format>&#x23;&#x3b;-&#x23;</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>0</precision>
-      </field>
-      <field>
-        <name>owningInstitutionHoldingsId</name>
-        <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>0</precision>
-      </field>
-      <field>
-        <name>ItemIdSeq</name>
-        <type>Integer</type>
-        <format>&#x23;&#x3b;-&#x23;</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>0</precision>
-      </field>
-      <field>
-        <name>LocalItemId</name>
+        <name>OWNING_INSTITUTION_BIB_ID</name>
         <type>String</type>
         <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
       </field>
       <field>
-        <name>UseRestrictions</name>
-        <type>String</type>
+        <name>createDateBib</name>
+        <type>Date</type>
         <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
       </field>
       <field>
-        <name>ItemStatus</name>
-        <type>String</type>
+        <name>lastUpdatedDateBib</name>
+        <type>Date</type>
         <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>ItemBarcode</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CopyNumber</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>VolPartYear</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CollectionGroupCode</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CustomerCode</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>itemExceptionMessage</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
       </field>
       <field>
         <name>Err_desc</name>
         <type>String</type>
         <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>BibRecordXml</name>
+        <type>String</type>
+        <format/>
+      </field>
+    </fields>
+    <custom>
+    <header_font_name>arial</header_font_name>
+    <header_font_size>10</header_font_size>
+    <header_font_bold>Y</header_font_bold>
+    <header_font_italic>N</header_font_italic>
+    <header_font_underline>no</header_font_underline>
+    <header_font_orientation>horizontal</header_font_orientation>
+    <header_font_color>black</header_font_color>
+    <header_background_color>none</header_background_color>
+    <header_row_height>255</header_row_height>
+    <header_alignment>left</header_alignment>
+    <header_image/>
+    <row_font_name>arial</row_font_name>
+    <row_font_size>10</row_font_size>
+    <row_font_color>black</row_font_color>
+    <row_background_color>none</row_background_color>
+      </custom>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>991</xloc>
+      <yloc>238</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modify HoldingsTree if null</name>
+    <type>IfNull</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <replaceAllByValue/>
+      <replaceAllMask/>
+      <selectFields>Y</selectFields>
+      <selectValuesType>N</selectValuesType>
+      <setEmptyStringAll>N</setEmptyStringAll>
+    <valuetypes>
+      </valuetypes>
+    <fields>
+      <field>
+        <name>HoldingsTree</name>
+        <value>&#x3c;holdings&#x3e;&#x3c;&#x2f;holdings&#x3e;</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>455</xloc>
+      <yloc>339</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modify Items if null</name>
+    <type>IfNull</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <replaceAllByValue/>
+      <replaceAllMask/>
+      <selectFields>Y</selectFields>
+      <selectValuesType>N</selectValuesType>
+      <setEmptyStringAll>N</setEmptyStringAll>
+    <valuetypes>
+      </valuetypes>
+    <fields>
+      <field>
+        <name>Items</name>
+        <value>&#x3c;items&#x3e;&#x3c;&#x2f;items&#x3e;</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>344</xloc>
+      <yloc>492</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modify dates and holdingsInstitutionId</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;var createDateHoldings &#x3d; CURR_DATE&#x3b;&#xa;var lastUpdatedDateHoldings &#x3d; CURR_DATE&#x3b;&#xa;&#xa;var OWNING_INSTITUTION_HOLDING_ID&#x3b;&#xa;&#xa;if &#x28;owningInstitutionHoldingsId &#x21;&#x3d; null &#x26;&#x26; &#x21;isEmpty&#x28;owningInstitutionHoldingsId&#x29;&#x29; &#x7b;&#xa;	OWNING_INSTITUTION_HOLDING_ID &#x3d; owningInstitutionHoldingsId&#x3b;&#xa;&#x7d; else &#x7b;&#xa;	OWNING_INSTITUTION_HOLDING_ID &#x3d; HoldingInstitutionIdFrom001&#x3b;&#xa;&#x7d;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>createDateHoldings</name>
+        <rename>createDateHoldings</rename>
+        <type>Date</type>
         <length>-1</length>
         <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>lastUpdatedDateHoldings</name>
+        <rename>lastUpdatedDateHoldings</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>OWNING_INSTITUTION_HOLDING_ID</name>
+        <rename>OWNING_INSTITUTION_HOLDING_ID</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>294</xloc>
+      <yloc>415</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modify dates and throw barcode exception</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;var createDateItem &#x3d; CURR_DATE&#x3b;&#xa;var lastUpdatedDateItem &#x3d; CURR_DATE&#x3b;&#xa;var itemExceptionMessage&#x3b;&#xa;&#xa;if &#x28;ItemBarcode &#x3d;&#x3d; null &#x7c;&#x7c; isEmpty&#x28;ItemBarcode&#x29;&#x29; &#x7b;&#xa;	itemExceptionMessage &#x3d; &#x22;Input item data field element &#x27;876 &#x24;p&#x27; is Null&#x22;&#x3b;&#xa;&#x7d; else &#x7b;&#xa;	itemExceptionMessage &#x3d; &#x22;&#x22;&#x3b;&#xa;&#x7d;&#xa;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>createDateItem</name>
+        <rename>createDateItem</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>lastUpdatedDateItem</name>
+        <rename>lastUpdatedDateItem</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>itemExceptionMessage</name>
+        <rename>itemExceptionMessage</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>621</xloc>
+      <yloc>570</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modify dates, institutionId and institutionBibId</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;var createDateBib &#x3d; CURR_DATE&#x3b;&#xa;var lastUpdatedDateBib &#x3d; CURR_DATE&#x3b;&#xa;&#xa;var BIB_INSTITUTION_ID&#x3b;&#xa;var OWNING_INSTITUTION_BIB_ID&#x3b;&#xa;&#xa;if &#x28;owningInstitutionId &#x3d;&#x3d; &#x22;PUL&#x22;&#x29; &#x7b;&#xa;	BIB_INSTITUTION_ID &#x3d; &#x22;1&#x22;&#x3b;&#xa;&#x7d; else if &#x28;owningInstitutionId &#x3d;&#x3d; &#x22;CUL&#x22;&#x29; &#x7b;&#xa;	BIB_INSTITUTION_ID &#x3d; &#x22;2&#x22;&#x3b;&#xa;&#x7d; else if &#x28;owningInstitutionId &#x3d;&#x3d; &#x22;NYPL&#x22;&#x29; &#x7b;&#xa;	BIB_INSTITUTION_ID &#x3d; &#x22;3&#x22;&#x3b;&#xa;&#x7d;&#xa;&#xa;if &#x28;owningInstitutionBibId &#x21;&#x3d; null &#x26;&#x26; &#x21;isEmpty&#x28;owningInstitutionBibId&#x29;&#x29; &#x7b;&#xa;	OWNING_INSTITUTION_BIB_ID &#x3d; owningInstitutionBibId&#x3b;&#xa;&#x7d; else &#x7b;&#xa;	OWNING_INSTITUTION_BIB_ID &#x3d; BibInstitutionIdFrom001&#x3b;&#xa;&#x7d;&#xa;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>createDateBib</name>
+        <rename>createDateBib</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>lastUpdatedDateBib</name>
+        <rename>lastUpdatedDateBib</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>BIB_INSTITUTION_ID</name>
+        <rename>BIB_INSTITUTION_ID</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>OWNING_INSTITUTION_BIB_ID</name>
+        <rename>OWNING_INSTITUTION_BIB_ID</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>429</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Holding Failed Excel Output</name>
+    <type>ExcelOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <header>Y</header>
+    <footer>N</footer>
+    <encoding>UTF-8</encoding>
+    <append>N</append>
+    <add_to_result_filenames>N</add_to_result_filenames>
+    <file>
+      <name>&#x2f;home&#x2f;likewise-open&#x2f;HTCINDIA&#x2f;rajeshbabuk&#x2f;EtlLoadReports&#x2f;FailedHoldings</name>
+      <extention>xls</extention>
+      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
+      <create_parent_folder>Y</create_parent_folder>
+      <split>N</split>
+      <add_date>Y</add_date>
+      <add_time>Y</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format>yyyy&#x2f;MM&#x2f;dd HH&#x3a;mm&#x3a;ss.SSS</date_time_format>
+      <sheetname>Holdings Failed</sheetname>
+      <autosizecolums>Y</autosizecolums>
+      <nullisblank>N</nullisblank>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
+      <splitevery>0</splitevery>
+      <usetempfiles>N</usetempfiles>
+      <tempdirectory/>
+      </file>
+    <template>
+      <enabled>N</enabled>
+      <append>N</append>
+      <filename>template.xls</filename>
+    </template>
+    <fields>
+      <field>
+        <name>HoldingsIdSeq</name>
+        <type>Integer</type>
+        <format/>
+      </field>
+      <field>
+        <name>BibIdSeq</name>
+        <type>Integer</type>
+        <format/>
+      </field>
+      <field>
+        <name>OWNING_INSTITUTION_HOLDING_ID</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>createDateHoldings</name>
+        <type>Date</type>
+        <format/>
+      </field>
+      <field>
+        <name>lastUpdatedDateHoldings</name>
+        <type>Date</type>
+        <format/>
+      </field>
+      <field>
+        <name>callNumber</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>callNumberType</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Err_desc</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>HoldingXml</name>
+        <type>String</type>
+        <format/>
+      </field>
+    </fields>
+    <custom>
+    <header_font_name>arial</header_font_name>
+    <header_font_size>10</header_font_size>
+    <header_font_bold>Y</header_font_bold>
+    <header_font_italic>N</header_font_italic>
+    <header_font_underline>no</header_font_underline>
+    <header_font_orientation>horizontal</header_font_orientation>
+    <header_font_color>black</header_font_color>
+    <header_background_color>none</header_background_color>
+    <header_row_height>255</header_row_height>
+    <header_alignment>left</header_alignment>
+    <header_image/>
+    <row_font_name>arial</row_font_name>
+    <row_font_size>10</row_font_size>
+    <row_font_color>black</row_font_color>
+    <row_background_color>none</row_background_color>
+      </custom>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>825</xloc>
+      <yloc>411</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Item Failed Excel Output</name>
+    <type>ExcelOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <header>Y</header>
+    <footer>N</footer>
+    <encoding>UTF-8</encoding>
+    <append>N</append>
+    <add_to_result_filenames>N</add_to_result_filenames>
+    <file>
+      <name>&#x2f;home&#x2f;likewise-open&#x2f;HTCINDIA&#x2f;rajeshbabuk&#x2f;EtlLoadReports&#x2f;FailedItems</name>
+      <extention>xls</extention>
+      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
+      <create_parent_folder>Y</create_parent_folder>
+      <split>N</split>
+      <add_date>Y</add_date>
+      <add_time>Y</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format>yyyy&#x2f;MM&#x2f;dd HH&#x3a;mm&#x3a;ss.SSS</date_time_format>
+      <sheetname>Item Failed</sheetname>
+      <autosizecolums>Y</autosizecolums>
+      <nullisblank>N</nullisblank>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
+      <splitevery>0</splitevery>
+      <usetempfiles>N</usetempfiles>
+      <tempdirectory/>
+      </file>
+    <template>
+      <enabled>N</enabled>
+      <append>N</append>
+      <filename>template.xls</filename>
+    </template>
+    <fields>
+      <field>
+        <name>ItemIdSeq</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+      </field>
+      <field>
+        <name>HoldingsIdSeq</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+      </field>
+      <field>
+        <name>OWNING_INSTITUTION_HOLDING_ID</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+      </field>
+      <field>
+        <name>BibIdSeq</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+      </field>
+      <field>
+        <name>OWNING_INSTITUTION_BIB_ID</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+      </field>
+      <field>
+        <name>LocalItemId</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>ItemBarcode</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>CustomerCode</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>callNumber</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>callNumberType</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>ITEM_STATUS_ID</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+      </field>
+      <field>
+        <name>CopyNumber</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>BIB_INSTITUTION_ID</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+      </field>
+      <field>
+        <name>COLLECTION_GROUP_ID</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+      </field>
+      <field>
+        <name>createDateItem</name>
+        <type>Date</type>
+        <format/>
+      </field>
+      <field>
+        <name>lastUpdatedDateItem</name>
+        <type>Date</type>
+        <format/>
+      </field>
+      <field>
+        <name>UseRestrictions</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>VolPartYear</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>itemExceptionMessage</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Err_desc</name>
+        <type>String</type>
+        <format/>
       </field>
       <field>
         <name>ItemXml</name>
         <type>String</type>
         <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
       </field>
     </fields>
+    <custom>
+    <header_font_name>arial</header_font_name>
+    <header_font_size>10</header_font_size>
+    <header_font_bold>Y</header_font_bold>
+    <header_font_italic>N</header_font_italic>
+    <header_font_underline>no</header_font_underline>
+    <header_font_orientation>horizontal</header_font_orientation>
+    <header_font_color>black</header_font_color>
+    <header_background_color>none</header_background_color>
+    <header_row_height>255</header_row_height>
+    <header_alignment>left</header_alignment>
+    <header_image/>
+    <row_font_name>arial</row_font_name>
+    <row_font_size>10</row_font_size>
+    <row_font_color>black</row_font_color>
+    <row_background_color>none</row_background_color>
+      </custom>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1154</xloc>
-      <yloc>420</yloc>
+      <xloc>1190</xloc>
+      <yloc>567</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2070,7 +1703,7 @@
   <step_error_handling>
       <error>
         <source_step>Bib Table</source_step>
-        <target_step>BIB_Failed</target_step>
+        <target_step>BIb Failed Excel Output</target_step>
         <is_enabled>Y</is_enabled>
         <nr_valuename>Err_nr_field</nr_valuename>
         <descriptions_valuename>Err_desc</descriptions_valuename>
@@ -2082,7 +1715,7 @@
       </error>
       <error>
         <source_step>Holdings Table</source_step>
-        <target_step>HOLDINGS_Failed</target_step>
+        <target_step>Holding Failed Excel Output</target_step>
         <is_enabled>Y</is_enabled>
         <nr_valuename>Err_nr_field</nr_valuename>
         <descriptions_valuename>Err_desc</descriptions_valuename>
@@ -2094,7 +1727,7 @@
       </error>
       <error>
         <source_step>Item Table</source_step>
-        <target_step>ITEM_Failed</target_step>
+        <target_step>Item Failed Excel Output</target_step>
         <is_enabled>Y</is_enabled>
         <nr_valuename>Err_nr_field</nr_valuename>
         <descriptions_valuename>Err_desc</descriptions_valuename>
