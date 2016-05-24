@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>RecapFinalDataLoad1</name>
+    <name>RecapDataLoad-mydb</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -67,19 +67,19 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2016&#x2f;05&#x2f;18 12&#x3a;40&#x3a;44.742</created_date>
+  <created_date>2016&#x2f;05&#x2f;23 12&#x3a;41&#x3a;05.650</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2016&#x2f;05&#x2f;20 17&#x3a;10&#x3a;25.514</modified_date>
+  <modified_date>2016&#x2f;05&#x2f;24 13&#x3a;16&#x3a;32.386</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
     <notepad>
-      <note>Note to use this transformation&#xa;&#xa;1. Select xml file from step - &#x27;Input Schema Xml&#x27;&#xa;2. Create a new database connection in step - &#x27;Bib Table&#x27; &#xa;3. Select the created connection in step - &#x27;Holdings Table&#x27;&#xa;4. Select the created connection in step - &#x27;Item Table&#x27;&#xa;5. Select the created connection in step - &#x27;Collection Group Tanle Lookup&#x27;&#xa;5. Change the path of failure files in steps - &#x27;Bib Failed Excel Output&#x27;, &#x27;Holdings Failed Excel Output&#x27; and &#x27;Item Failed Excel Output&#x27;.&#xa;6. If required, change the start id in step - &#x27;Bib Id Seq&#x27;, &#x27;Holdings Id Seq&#x27; and &#x27;Item Id Seq&#x27;.</note>
-      <xloc>22</xloc>
-      <yloc>41</yloc>
-      <width>868</width>
-      <heigth>163</heigth>
+      <note>Note to use this transformation&#xa;&#xa;--&#x3e; Select xml file from step - &#x27;Input Schema Xml&#x27;&#xa;--&#x3e; Create a new database connection in step - &#x27;Bib Table&#x27; &#xa;--&#x3e; Select the created connection in step - &#x27;Holdings Table&#x27;&#xa;--&#x3e; Select the created connection in step - &#x27;Item Table&#x27;&#xa;--&#x3e; Select the created connection in step - &#x27;Bib Holdings Table&#x27;&#xa;--&#x3e; Select the created connection in step - &#x27;Collection Group Table Lookup&#x27;&#xa;--&#x3e; Change the path of failure files in steps - &#x27;Bib Failed Excel Output&#x27;, &#x27;Holdings Failed Excel Output&#x27;, &#xa;       &#x27;Bib Holdings Failed Excel Output&#x27; and &#x27;Item Failed Excel Output&#x27;.&#xa;--&#x3e; If required, change the start id in step - &#x27;Bib Id Seq&#x27;, &#x27;Holdings Id Seq&#x27;, &#x27;Bib Holdings Id Seq&#x27; and &#x27;Item Id Seq&#x27;.</note>
+      <xloc>3</xloc>
+      <yloc>2</yloc>
+      <width>742</width>
+      <heigth>197</heigth>
       <fontname>Ubuntu</fontname>
       <fontsize>11</fontsize>
       <fontbold>N</fontbold>
@@ -102,6 +102,33 @@
     <type>MYSQL</type>
     <access>Native</access>
     <database>mydb</database>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce10cc9da0ce</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Recap-mydb1</name>
+    <server>localhost</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>mydb1</database>
     <port>3306</port>
     <username>root</username>
     <password>Encrypted 2be98afc86aa7f2e4cb79ce10cc9da0ce</password>
@@ -153,24 +180,27 @@
   <order>
   <hop> <from>Add constants</from><to>Collection Group Table Lookup</to><enabled>Y</enabled> </hop>
   <hop> <from>BIb Id Seq</from><to>Bib Table</to><enabled>Y</enabled> </hop>
+  <hop> <from>Bib Holdings Id Seq</from><to>Bib Holdings Table</to><enabled>Y</enabled> </hop>
+  <hop> <from>Bib Holdings Table</from><to>Bib Holdings Failed Excel Output</to><enabled>Y</enabled> </hop>
+  <hop> <from>Bib Table</from><to>BIb Failed Excel Output</to><enabled>Y</enabled> </hop>
   <hop> <from>Bib Table</from><to>Modify HoldingsTree if null</to><enabled>Y</enabled> </hop>
   <hop> <from>Collection Group Table Lookup</from><to>Modify dates and throw barcode exception</to><enabled>Y</enabled> </hop>
   <hop> <from>Current Date</from><to>Modify dates, institutionId and institutionBibId</to><enabled>Y</enabled> </hop>
   <hop> <from>Holdings Id Seq</from><to>Holdings Table</to><enabled>Y</enabled> </hop>
   <hop> <from>Holdings Schema Xml</from><to>Modify dates and holdingsInstitutionId</to><enabled>Y</enabled> </hop>
+  <hop> <from>Holdings Table</from><to>Bib Holdings Id Seq</to><enabled>Y</enabled> </hop>
+  <hop> <from>Holdings Table</from><to>Holding Failed Excel Output</to><enabled>Y</enabled> </hop>
   <hop> <from>Holdings Table</from><to>Modify Items if null</to><enabled>Y</enabled> </hop>
   <hop> <from>If field value is null</from><to>Item Id Seq</to><enabled>Y</enabled> </hop>
   <hop> <from>Input Schema Xml</from><to>Current Date</to><enabled>Y</enabled> </hop>
   <hop> <from>Item Id Seq</from><to>Item Table</to><enabled>Y</enabled> </hop>
   <hop> <from>Item Schema Xml</from><to>Add constants</to><enabled>Y</enabled> </hop>
+  <hop> <from>Item Table</from><to>Item Failed Excel Output</to><enabled>Y</enabled> </hop>
   <hop> <from>Modify HoldingsTree if null</from><to>Holdings Schema Xml</to><enabled>Y</enabled> </hop>
   <hop> <from>Modify Items if null</from><to>Item Schema Xml</to><enabled>Y</enabled> </hop>
   <hop> <from>Modify dates and holdingsInstitutionId</from><to>Holdings Id Seq</to><enabled>Y</enabled> </hop>
   <hop> <from>Modify dates and throw barcode exception</from><to>If field value is null</to><enabled>Y</enabled> </hop>
   <hop> <from>Modify dates, institutionId and institutionBibId</from><to>BIb Id Seq</to><enabled>Y</enabled> </hop>
-  <hop> <from>Bib Table</from><to>BIb Failed Excel Output</to><enabled>Y</enabled> </hop>
-  <hop> <from>Item Table</from><to>Item Failed Excel Output</to><enabled>Y</enabled> </hop>
-  <hop> <from>Holdings Table</from><to>Holding Failed Excel Output</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Add constants</name>
@@ -199,8 +229,110 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>191</xloc>
-      <yloc>573</yloc>
+      <xloc>186</xloc>
+      <yloc>555</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>BIb Failed Excel Output</name>
+    <type>ExcelOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <header>Y</header>
+    <footer>N</footer>
+    <encoding>UTF-8</encoding>
+    <append>N</append>
+    <add_to_result_filenames>N</add_to_result_filenames>
+    <file>
+      <name>&#x2f;home&#x2f;likewise-open&#x2f;HTCINDIA&#x2f;rajeshbabuk&#x2f;EtlLoadReports&#x2f;FailedBibs</name>
+      <extention>xls</extention>
+      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
+      <create_parent_folder>Y</create_parent_folder>
+      <split>N</split>
+      <add_date>Y</add_date>
+      <add_time>Y</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format>yyyy&#x2f;MM&#x2f;dd HH&#x3a;mm&#x3a;ss.SSS</date_time_format>
+      <sheetname>Bibs Failed</sheetname>
+      <autosizecolums>Y</autosizecolums>
+      <nullisblank>N</nullisblank>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
+      <splitevery>0</splitevery>
+      <usetempfiles>N</usetempfiles>
+      <tempdirectory/>
+      </file>
+    <template>
+      <enabled>N</enabled>
+      <append>N</append>
+      <filename>template.xls</filename>
+    </template>
+    <fields>
+      <field>
+        <name>BibIdSeq</name>
+        <type>Integer</type>
+        <format/>
+      </field>
+      <field>
+        <name>BIB_INSTITUTION_ID</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>OWNING_INSTITUTION_BIB_ID</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>createDateBib</name>
+        <type>Date</type>
+        <format/>
+      </field>
+      <field>
+        <name>lastUpdatedDateBib</name>
+        <type>Date</type>
+        <format/>
+      </field>
+      <field>
+        <name>Err_desc</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>BibRecordXml</name>
+        <type>String</type>
+        <format/>
+      </field>
+    </fields>
+    <custom>
+    <header_font_name>arial</header_font_name>
+    <header_font_size>10</header_font_size>
+    <header_font_bold>Y</header_font_bold>
+    <header_font_italic>N</header_font_italic>
+    <header_font_underline>no</header_font_underline>
+    <header_font_orientation>horizontal</header_font_orientation>
+    <header_font_color>black</header_font_color>
+    <header_background_color>none</header_background_color>
+    <header_row_height>255</header_row_height>
+    <header_alignment>left</header_alignment>
+    <header_image/>
+    <row_font_name>arial</row_font_name>
+    <row_font_size>10</row_font_size>
+    <row_font_color>black</row_font_color>
+    <row_background_color>none</row_background_color>
+      </custom>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>986</xloc>
+      <yloc>220</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -223,13 +355,179 @@
       <seqname>bibliographic_s</seqname>
       <use_counter>Y</use_counter>
       <counter_name>BibIdSeq</counter_name>
-      <start_at>8066</start_at>
+      <start_at>1</start_at>
       <increment_by>1</increment_by>
       <max_value>999999999</max_value>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>643</xloc>
-      <yloc>240</yloc>
+      <xloc>638</xloc>
+      <yloc>222</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Bib Holdings Failed Excel Output</name>
+    <type>ExcelOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <header>Y</header>
+    <footer>N</footer>
+    <encoding>UTF-8</encoding>
+    <append>N</append>
+    <add_to_result_filenames>N</add_to_result_filenames>
+    <file>
+      <name>&#x2f;home&#x2f;likewise-open&#x2f;HTCINDIA&#x2f;rajeshbabuk&#x2f;EtlLoadReports&#x2f;FailedBibHoldings</name>
+      <extention>xls</extention>
+      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
+      <create_parent_folder>Y</create_parent_folder>
+      <split>N</split>
+      <add_date>Y</add_date>
+      <add_time>Y</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format>yyyy&#x2f;MM&#x2f;dd HH&#x3a;mm&#x3a;ss.SSS</date_time_format>
+      <sheetname>Holdings Failed</sheetname>
+      <autosizecolums>Y</autosizecolums>
+      <nullisblank>N</nullisblank>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
+      <splitevery>0</splitevery>
+      <usetempfiles>N</usetempfiles>
+      <tempdirectory/>
+      </file>
+    <template>
+      <enabled>N</enabled>
+      <append>N</append>
+      <filename>template.xls</filename>
+    </template>
+    <fields>
+      <field>
+        <name>BibHoldingsIdSeq</name>
+        <type>Integer</type>
+        <format/>
+      </field>
+      <field>
+        <name>BibIdSeq</name>
+        <type>Integer</type>
+        <format/>
+      </field>
+      <field>
+        <name>HoldingsIdSeq</name>
+        <type>Integer</type>
+        <format/>
+      </field>
+      <field>
+        <name>Err_desc</name>
+        <type>String</type>
+        <format/>
+      </field>
+    </fields>
+    <custom>
+    <header_font_name>arial</header_font_name>
+    <header_font_size>10</header_font_size>
+    <header_font_bold>Y</header_font_bold>
+    <header_font_italic>N</header_font_italic>
+    <header_font_underline>no</header_font_underline>
+    <header_font_orientation>horizontal</header_font_orientation>
+    <header_font_color>black</header_font_color>
+    <header_background_color>none</header_background_color>
+    <header_row_height>255</header_row_height>
+    <header_alignment>left</header_alignment>
+    <header_image/>
+    <row_font_name>arial</row_font_name>
+    <row_font_size>10</row_font_size>
+    <row_font_color>black</row_font_color>
+    <row_background_color>none</row_background_color>
+      </custom>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1020</xloc>
+      <yloc>478</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Bib Holdings Id Seq</name>
+    <type>Sequence</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <valuename>BibHoldingsIdSeq</valuename>
+      <use_database>N</use_database>
+      <connection>Recap-mydb</connection>
+      <schema>mydb</schema>
+      <seqname>bibliographic_s</seqname>
+      <use_counter>Y</use_counter>
+      <counter_name>BibHoldingsIdSeq</counter_name>
+      <start_at>1</start_at>
+      <increment_by>1</increment_by>
+      <max_value>999999999</max_value>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>728</xloc>
+      <yloc>434</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Bib Holdings Table</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Recap-mydb</connection>
+    <schema/>
+    <table>bibliographic_holdings_t</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>BIBLIOGRAPHIC_HOLDINGS_ID</column_name>
+          <stream_name>BibHoldingsIdSeq</stream_name>
+        </field>
+        <field>
+          <column_name>BIBLIOGRAPHIC_ID</column_name>
+          <stream_name>BibIdSeq</stream_name>
+        </field>
+        <field>
+          <column_name>HOLDINGS_ID</column_name>
+          <stream_name>HoldingsIdSeq</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>828</xloc>
+      <yloc>476</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -290,8 +588,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>850</xloc>
-      <yloc>238</yloc>
+      <xloc>845</xloc>
+      <yloc>220</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -332,8 +630,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>360</xloc>
-      <yloc>569</yloc>
+      <xloc>355</xloc>
+      <yloc>551</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -357,8 +655,120 @@
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>216</xloc>
-      <yloc>243</yloc>
+      <xloc>211</xloc>
+      <yloc>225</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Holding Failed Excel Output</name>
+    <type>ExcelOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <header>Y</header>
+    <footer>N</footer>
+    <encoding>UTF-8</encoding>
+    <append>N</append>
+    <add_to_result_filenames>N</add_to_result_filenames>
+    <file>
+      <name>&#x2f;home&#x2f;likewise-open&#x2f;HTCINDIA&#x2f;rajeshbabuk&#x2f;EtlLoadReports&#x2f;FailedHoldings</name>
+      <extention>xls</extention>
+      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
+      <create_parent_folder>Y</create_parent_folder>
+      <split>N</split>
+      <add_date>Y</add_date>
+      <add_time>Y</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format>yyyy&#x2f;MM&#x2f;dd HH&#x3a;mm&#x3a;ss.SSS</date_time_format>
+      <sheetname>Holdings Failed</sheetname>
+      <autosizecolums>Y</autosizecolums>
+      <nullisblank>N</nullisblank>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
+      <splitevery>0</splitevery>
+      <usetempfiles>N</usetempfiles>
+      <tempdirectory/>
+      </file>
+    <template>
+      <enabled>N</enabled>
+      <append>N</append>
+      <filename>template.xls</filename>
+    </template>
+    <fields>
+      <field>
+        <name>HoldingsIdSeq</name>
+        <type>Integer</type>
+        <format/>
+      </field>
+      <field>
+        <name>BibIdSeq</name>
+        <type>Integer</type>
+        <format/>
+      </field>
+      <field>
+        <name>OWNING_INSTITUTION_HOLDING_ID</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>createDateHoldings</name>
+        <type>Date</type>
+        <format/>
+      </field>
+      <field>
+        <name>lastUpdatedDateHoldings</name>
+        <type>Date</type>
+        <format/>
+      </field>
+      <field>
+        <name>callNumber</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>callNumberType</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Err_desc</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>HoldingXml</name>
+        <type>String</type>
+        <format/>
+      </field>
+    </fields>
+    <custom>
+    <header_font_name>arial</header_font_name>
+    <header_font_size>10</header_font_size>
+    <header_font_bold>Y</header_font_bold>
+    <header_font_italic>N</header_font_italic>
+    <header_font_underline>no</header_font_underline>
+    <header_font_orientation>horizontal</header_font_orientation>
+    <header_font_color>black</header_font_color>
+    <header_background_color>none</header_background_color>
+    <header_row_height>255</header_row_height>
+    <header_alignment>left</header_alignment>
+    <header_image/>
+    <row_font_name>arial</row_font_name>
+    <row_font_size>10</row_font_size>
+    <row_font_color>black</row_font_color>
+    <row_background_color>none</row_background_color>
+      </custom>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>810</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -381,13 +791,13 @@
       <seqname>ole_ds_bib_s</seqname>
       <use_counter>Y</use_counter>
       <counter_name>HoldingsIdSeq</counter_name>
-      <start_at>6327</start_at>
+      <start_at>1</start_at>
       <increment_by>1</increment_by>
       <max_value>999999999</max_value>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>511</xloc>
-      <yloc>414</yloc>
+      <xloc>506</xloc>
+      <yloc>396</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -546,8 +956,8 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>71</xloc>
-      <yloc>415</yloc>
+      <xloc>66</xloc>
+      <yloc>397</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -608,8 +1018,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>639</xloc>
-      <yloc>410</yloc>
+      <xloc>634</xloc>
+      <yloc>392</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -642,8 +1052,8 @@
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>841</xloc>
-      <yloc>570</yloc>
+      <xloc>836</xloc>
+      <yloc>552</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -673,7 +1083,7 @@
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>&#x2f;home&#x2f;likewise-open&#x2f;HTCINDIA&#x2f;rajeshbabuk&#x2f;ReCAP&#x2f;recap&#x2f;columbia_sample_20160427.xml</name>
+      <name/>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -787,8 +1197,180 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>74</xloc>
-      <yloc>242</yloc>
+      <xloc>69</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Item Failed Excel Output</name>
+    <type>ExcelOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <header>Y</header>
+    <footer>N</footer>
+    <encoding>UTF-8</encoding>
+    <append>N</append>
+    <add_to_result_filenames>N</add_to_result_filenames>
+    <file>
+      <name>&#x2f;home&#x2f;likewise-open&#x2f;HTCINDIA&#x2f;rajeshbabuk&#x2f;EtlLoadReports&#x2f;FailedItems</name>
+      <extention>xls</extention>
+      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
+      <create_parent_folder>Y</create_parent_folder>
+      <split>N</split>
+      <add_date>Y</add_date>
+      <add_time>Y</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format>yyyy&#x2f;MM&#x2f;dd HH&#x3a;mm&#x3a;ss.SSS</date_time_format>
+      <sheetname>Item Failed</sheetname>
+      <autosizecolums>Y</autosizecolums>
+      <nullisblank>N</nullisblank>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
+      <splitevery>0</splitevery>
+      <usetempfiles>N</usetempfiles>
+      <tempdirectory/>
+      </file>
+    <template>
+      <enabled>N</enabled>
+      <append>N</append>
+      <filename>template.xls</filename>
+    </template>
+    <fields>
+      <field>
+        <name>ItemIdSeq</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+      </field>
+      <field>
+        <name>HoldingsIdSeq</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+      </field>
+      <field>
+        <name>OWNING_INSTITUTION_HOLDING_ID</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+      </field>
+      <field>
+        <name>BibIdSeq</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+      </field>
+      <field>
+        <name>OWNING_INSTITUTION_BIB_ID</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+      </field>
+      <field>
+        <name>LocalItemId</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>ItemBarcode</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>CustomerCode</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>callNumber</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>callNumberType</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>ITEM_STATUS_ID</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+      </field>
+      <field>
+        <name>CopyNumber</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>BIB_INSTITUTION_ID</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+      </field>
+      <field>
+        <name>COLLECTION_GROUP_ID</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+      </field>
+      <field>
+        <name>createDateItem</name>
+        <type>Date</type>
+        <format/>
+      </field>
+      <field>
+        <name>lastUpdatedDateItem</name>
+        <type>Date</type>
+        <format/>
+      </field>
+      <field>
+        <name>UseRestrictions</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>VolPartYear</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>itemExceptionMessage</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Err_desc</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>ItemXml</name>
+        <type>String</type>
+        <format/>
+      </field>
+    </fields>
+    <custom>
+    <header_font_name>arial</header_font_name>
+    <header_font_size>10</header_font_size>
+    <header_font_bold>Y</header_font_bold>
+    <header_font_italic>N</header_font_italic>
+    <header_font_underline>no</header_font_underline>
+    <header_font_orientation>horizontal</header_font_orientation>
+    <header_font_color>black</header_font_color>
+    <header_background_color>none</header_background_color>
+    <header_row_height>255</header_row_height>
+    <header_alignment>left</header_alignment>
+    <header_image/>
+    <row_font_name>arial</row_font_name>
+    <row_font_size>10</row_font_size>
+    <row_font_color>black</row_font_color>
+    <row_background_color>none</row_background_color>
+      </custom>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1185</xloc>
+      <yloc>549</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -811,13 +1393,13 @@
       <seqname>ole_ds_bib_s</seqname>
       <use_counter>Y</use_counter>
       <counter_name>ItemIdSeq</counter_name>
-      <start_at>8710</start_at>
+      <start_at>1</start_at>
       <increment_by>1</increment_by>
       <max_value>999999999</max_value>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>952</xloc>
-      <yloc>570</yloc>
+      <xloc>947</xloc>
+      <yloc>552</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1006,8 +1588,8 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>57</xloc>
-      <yloc>575</yloc>
+      <xloc>52</xloc>
+      <yloc>557</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1108,110 +1690,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1045</xloc>
-      <yloc>569</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>BIb Failed Excel Output</name>
-    <type>ExcelOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <header>Y</header>
-    <footer>N</footer>
-    <encoding>UTF-8</encoding>
-    <append>N</append>
-    <add_to_result_filenames>N</add_to_result_filenames>
-    <file>
-      <name>&#x2f;home&#x2f;likewise-open&#x2f;HTCINDIA&#x2f;rajeshbabuk&#x2f;EtlLoadReports&#x2f;FailedBibs</name>
-      <extention>xls</extention>
-      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
-      <create_parent_folder>Y</create_parent_folder>
-      <split>N</split>
-      <add_date>Y</add_date>
-      <add_time>Y</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format>yyyy&#x2f;MM&#x2f;dd HH&#x3a;mm&#x3a;ss.SSS</date_time_format>
-      <sheetname>Bibs Failed</sheetname>
-      <autosizecolums>Y</autosizecolums>
-      <nullisblank>N</nullisblank>
-      <protect_sheet>N</protect_sheet>
-      <password>Encrypted </password>
-      <splitevery>0</splitevery>
-      <usetempfiles>N</usetempfiles>
-      <tempdirectory/>
-      </file>
-    <template>
-      <enabled>N</enabled>
-      <append>N</append>
-      <filename>template.xls</filename>
-    </template>
-    <fields>
-      <field>
-        <name>BibIdSeq</name>
-        <type>Integer</type>
-        <format/>
-      </field>
-      <field>
-        <name>BIB_INSTITUTION_ID</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>OWNING_INSTITUTION_BIB_ID</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>createDateBib</name>
-        <type>Date</type>
-        <format/>
-      </field>
-      <field>
-        <name>lastUpdatedDateBib</name>
-        <type>Date</type>
-        <format/>
-      </field>
-      <field>
-        <name>Err_desc</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>BibRecordXml</name>
-        <type>String</type>
-        <format/>
-      </field>
-    </fields>
-    <custom>
-    <header_font_name>arial</header_font_name>
-    <header_font_size>10</header_font_size>
-    <header_font_bold>Y</header_font_bold>
-    <header_font_italic>N</header_font_italic>
-    <header_font_underline>no</header_font_underline>
-    <header_font_orientation>horizontal</header_font_orientation>
-    <header_font_color>black</header_font_color>
-    <header_background_color>none</header_background_color>
-    <header_row_height>255</header_row_height>
-    <header_alignment>left</header_alignment>
-    <header_image/>
-    <row_font_name>arial</row_font_name>
-    <row_font_size>10</row_font_size>
-    <row_font_color>black</row_font_color>
-    <row_background_color>none</row_background_color>
-      </custom>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>991</xloc>
-      <yloc>238</yloc>
+      <xloc>1040</xloc>
+      <yloc>551</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1244,8 +1724,8 @@
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>455</xloc>
-      <yloc>339</yloc>
+      <xloc>450</xloc>
+      <yloc>321</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1254,7 +1734,7 @@
     <name>Modify Items if null</name>
     <type>IfNull</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -1278,8 +1758,8 @@
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>344</xloc>
-      <yloc>492</yloc>
+      <xloc>339</xloc>
+      <yloc>474</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1320,8 +1800,8 @@
         <replace>N</replace>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>294</xloc>
-      <yloc>415</yloc>
+      <xloc>289</xloc>
+      <yloc>397</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1362,8 +1842,8 @@
         <replace>N</replace>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>621</xloc>
-      <yloc>570</yloc>
+      <xloc>616</xloc>
+      <yloc>552</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1410,297 +1890,25 @@
         <replace>N</replace>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>429</xloc>
-      <yloc>240</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Holding Failed Excel Output</name>
-    <type>ExcelOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <header>Y</header>
-    <footer>N</footer>
-    <encoding>UTF-8</encoding>
-    <append>N</append>
-    <add_to_result_filenames>N</add_to_result_filenames>
-    <file>
-      <name>&#x2f;home&#x2f;likewise-open&#x2f;HTCINDIA&#x2f;rajeshbabuk&#x2f;EtlLoadReports&#x2f;FailedHoldings</name>
-      <extention>xls</extention>
-      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
-      <create_parent_folder>Y</create_parent_folder>
-      <split>N</split>
-      <add_date>Y</add_date>
-      <add_time>Y</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format>yyyy&#x2f;MM&#x2f;dd HH&#x3a;mm&#x3a;ss.SSS</date_time_format>
-      <sheetname>Holdings Failed</sheetname>
-      <autosizecolums>Y</autosizecolums>
-      <nullisblank>N</nullisblank>
-      <protect_sheet>N</protect_sheet>
-      <password>Encrypted </password>
-      <splitevery>0</splitevery>
-      <usetempfiles>N</usetempfiles>
-      <tempdirectory/>
-      </file>
-    <template>
-      <enabled>N</enabled>
-      <append>N</append>
-      <filename>template.xls</filename>
-    </template>
-    <fields>
-      <field>
-        <name>HoldingsIdSeq</name>
-        <type>Integer</type>
-        <format/>
-      </field>
-      <field>
-        <name>BibIdSeq</name>
-        <type>Integer</type>
-        <format/>
-      </field>
-      <field>
-        <name>OWNING_INSTITUTION_HOLDING_ID</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>createDateHoldings</name>
-        <type>Date</type>
-        <format/>
-      </field>
-      <field>
-        <name>lastUpdatedDateHoldings</name>
-        <type>Date</type>
-        <format/>
-      </field>
-      <field>
-        <name>callNumber</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>callNumberType</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>Err_desc</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>HoldingXml</name>
-        <type>String</type>
-        <format/>
-      </field>
-    </fields>
-    <custom>
-    <header_font_name>arial</header_font_name>
-    <header_font_size>10</header_font_size>
-    <header_font_bold>Y</header_font_bold>
-    <header_font_italic>N</header_font_italic>
-    <header_font_underline>no</header_font_underline>
-    <header_font_orientation>horizontal</header_font_orientation>
-    <header_font_color>black</header_font_color>
-    <header_background_color>none</header_background_color>
-    <header_row_height>255</header_row_height>
-    <header_alignment>left</header_alignment>
-    <header_image/>
-    <row_font_name>arial</row_font_name>
-    <row_font_size>10</row_font_size>
-    <row_font_color>black</row_font_color>
-    <row_background_color>none</row_background_color>
-      </custom>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>825</xloc>
-      <yloc>411</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Item Failed Excel Output</name>
-    <type>ExcelOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <header>Y</header>
-    <footer>N</footer>
-    <encoding>UTF-8</encoding>
-    <append>N</append>
-    <add_to_result_filenames>N</add_to_result_filenames>
-    <file>
-      <name>&#x2f;home&#x2f;likewise-open&#x2f;HTCINDIA&#x2f;rajeshbabuk&#x2f;EtlLoadReports&#x2f;FailedItems</name>
-      <extention>xls</extention>
-      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
-      <create_parent_folder>Y</create_parent_folder>
-      <split>N</split>
-      <add_date>Y</add_date>
-      <add_time>Y</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format>yyyy&#x2f;MM&#x2f;dd HH&#x3a;mm&#x3a;ss.SSS</date_time_format>
-      <sheetname>Item Failed</sheetname>
-      <autosizecolums>Y</autosizecolums>
-      <nullisblank>N</nullisblank>
-      <protect_sheet>N</protect_sheet>
-      <password>Encrypted </password>
-      <splitevery>0</splitevery>
-      <usetempfiles>N</usetempfiles>
-      <tempdirectory/>
-      </file>
-    <template>
-      <enabled>N</enabled>
-      <append>N</append>
-      <filename>template.xls</filename>
-    </template>
-    <fields>
-      <field>
-        <name>ItemIdSeq</name>
-        <type>Integer</type>
-        <format>&#x23;&#x3b;-&#x23;</format>
-      </field>
-      <field>
-        <name>HoldingsIdSeq</name>
-        <type>Integer</type>
-        <format>&#x23;&#x3b;-&#x23;</format>
-      </field>
-      <field>
-        <name>OWNING_INSTITUTION_HOLDING_ID</name>
-        <type>Integer</type>
-        <format>&#x23;&#x3b;-&#x23;</format>
-      </field>
-      <field>
-        <name>BibIdSeq</name>
-        <type>Integer</type>
-        <format>&#x23;&#x3b;-&#x23;</format>
-      </field>
-      <field>
-        <name>OWNING_INSTITUTION_BIB_ID</name>
-        <type>Integer</type>
-        <format>&#x23;&#x3b;-&#x23;</format>
-      </field>
-      <field>
-        <name>LocalItemId</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>ItemBarcode</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>CustomerCode</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>callNumber</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>callNumberType</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>ITEM_STATUS_ID</name>
-        <type>Integer</type>
-        <format>&#x23;&#x3b;-&#x23;</format>
-      </field>
-      <field>
-        <name>CopyNumber</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>BIB_INSTITUTION_ID</name>
-        <type>Integer</type>
-        <format>&#x23;&#x3b;-&#x23;</format>
-      </field>
-      <field>
-        <name>COLLECTION_GROUP_ID</name>
-        <type>Integer</type>
-        <format>&#x23;&#x3b;-&#x23;</format>
-      </field>
-      <field>
-        <name>createDateItem</name>
-        <type>Date</type>
-        <format/>
-      </field>
-      <field>
-        <name>lastUpdatedDateItem</name>
-        <type>Date</type>
-        <format/>
-      </field>
-      <field>
-        <name>UseRestrictions</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>VolPartYear</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>itemExceptionMessage</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>Err_desc</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>ItemXml</name>
-        <type>String</type>
-        <format/>
-      </field>
-    </fields>
-    <custom>
-    <header_font_name>arial</header_font_name>
-    <header_font_size>10</header_font_size>
-    <header_font_bold>Y</header_font_bold>
-    <header_font_italic>N</header_font_italic>
-    <header_font_underline>no</header_font_underline>
-    <header_font_orientation>horizontal</header_font_orientation>
-    <header_font_color>black</header_font_color>
-    <header_background_color>none</header_background_color>
-    <header_row_height>255</header_row_height>
-    <header_alignment>left</header_alignment>
-    <header_image/>
-    <row_font_name>arial</row_font_name>
-    <row_font_size>10</row_font_size>
-    <row_font_color>black</row_font_color>
-    <row_background_color>none</row_background_color>
-      </custom>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1190</xloc>
-      <yloc>567</yloc>
+      <xloc>424</xloc>
+      <yloc>222</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step_error_handling>
+      <error>
+        <source_step>Bib Holdings Table</source_step>
+        <target_step>Bib Holdings Failed Excel Output</target_step>
+        <is_enabled>Y</is_enabled>
+        <nr_valuename/>
+        <descriptions_valuename>Err_desc</descriptions_valuename>
+        <fields_valuename/>
+        <codes_valuename/>
+        <max_errors/>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
       <error>
         <source_step>Bib Table</source_step>
         <target_step>BIb Failed Excel Output</target_step>
